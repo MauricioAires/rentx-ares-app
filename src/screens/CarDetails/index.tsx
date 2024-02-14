@@ -1,8 +1,16 @@
-import { Text } from "react-native";
 import { BackButton } from "../../components/BackButton";
+import { ImageSlider } from "../../components/ImageSlider";
+import { Accessory } from "../../components/Accessory";
+import {
+  Acceleration,
+  Exchange,
+  Force,
+  Gasoline,
+  People,
+  Speed,
+} from "../../assets";
 
 import * as S from "./styles";
-import { ImageSlider } from "../../components/ImageSlider";
 
 export function CarDetails() {
   return (
@@ -30,6 +38,15 @@ export function CarDetails() {
             <S.Price>R$ 500,00</S.Price>
           </S.Rent>
         </S.Details>
+
+        <S.Accessories>
+          <Accessory name="380km/h" icon={Speed} />
+          <Accessory name="3.2s" icon={Acceleration} />
+          <Accessory name="800 HP" icon={Force} />
+          <Accessory name="Gasolina" icon={Gasoline} />
+          <Accessory name="Auto" icon={Exchange} />
+          <Accessory name="2 pessoas" icon={People} />
+        </S.Accessories>
         <S.About>
           Este é automóvel desportivo. Surgiu do lendário touro de lide
           indultado na praça Real Maestranza de Sevilla. É um belíssimo carro

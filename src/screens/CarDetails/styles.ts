@@ -95,3 +95,12 @@ export const About = styled.Text`
     margin-top: 22px;
   `}
 `;
+
+export const Accessories = styled.View`
+  width: 100%;
+
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+`;
