@@ -93,6 +93,8 @@ export const About = styled.Text`
 
     text-align: justify;
     margin-top: 22px;
+
+    line-height: ${RFValue(25)}px;
   `}
 `;
 
