@@ -2,7 +2,7 @@ import { Gasoline } from "../../assets";
 import { priceFormatter } from "../../utils/formatters/price";
 import * as S from "./styles";
 
-interface Car {
+export interface ICar {
   brand: string;
   name: string;
   thumbnail: string;
@@ -13,7 +13,7 @@ interface Car {
 }
 
 export interface CarProps {
-  data: Car;
+  data: ICar;
 }
 
 export function Car({ data: { brand, name, rent, thumbnail } }: CarProps) {

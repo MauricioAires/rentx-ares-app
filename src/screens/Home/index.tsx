@@ -2,7 +2,7 @@ import { StatusBar } from "react-native";
 import { RFValue } from "react-native-responsive-fontsize";
 
 import { Logo } from "../../assets";
-import { Car } from "../../components/Car";
+import { Car, ICar } from "../../components/Car";
 
 import * as S from "./styles";
 
@@ -23,17 +23,51 @@ export function Home() {
           </S.HeaderContent>
         </S.Header>
 
-        <Car
-          data={{
-            brand: "Audi",
-            name: "AS 5 Turbo",
-            thumbnail:
-              "https://png.monster/wp-content/uploads/2020/11/2018-audi-rs5-4wd-coupe-angular-front-5039562b.png",
-            rent: {
-              period: "Ao dia",
-              price: 120,
+        <S.CarList
+          data={[
+            {
+              brand: "Audi",
+              name: "AS 5 Turbo",
+              thumbnail:
+                "https://png.monster/wp-content/uploads/2020/11/2018-audi-rs5-4wd-coupe-angular-front-5039562b.png",
+              rent: {
+                period: "Ao dia",
+                price: 120,
+              },
             },
-          }}
+            {
+              brand: "Audi",
+              name: "AS 5 Turbo",
+              thumbnail:
+                "https://png.monster/wp-content/uploads/2020/11/2018-audi-rs5-4wd-coupe-angular-front-5039562b.png",
+              rent: {
+                period: "Ao dia",
+                price: 120,
+              },
+            },
+            {
+              brand: "Audi",
+              name: "AS 5 Turbo",
+              thumbnail:
+                "https://png.monster/wp-content/uploads/2020/11/2018-audi-rs5-4wd-coupe-angular-front-5039562b.png",
+              rent: {
+                period: "Ao dia",
+                price: 120,
+              },
+            },
+            {
+              brand: "Audi",
+              name: "AS 5 Turbo",
+              thumbnail:
+                "https://png.monster/wp-content/uploads/2020/11/2018-audi-rs5-4wd-coupe-angular-front-5039562b.png",
+              rent: {
+                period: "Ao dia",
+                price: 120,
+              },
+            },
+          ]}
+          keyExtractor={(item) => String(item)}
+          renderItem={({ item }) => <Car data={item as ICar} />}
         />
       </S.Container>
     </>
