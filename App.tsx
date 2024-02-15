@@ -5,6 +5,7 @@ import { FontsProvider } from "./src/providers/fonts";
 import { ThemeProvider } from "./src/providers/theme";
 import { CarDetails } from "./src/screens/CarDetails";
 import { GestureHandlerProvier } from "./src/providers/gesture-handler";
+import { Scheduling } from "./src/screens/Scheduling";
 
 export default function App() {
   return (
@@ -12,7 +13,8 @@ export default function App() {
       <ThemeProvider>
         <GestureHandlerProvier>
           {/* <Home /> */}
-          <CarDetails />
+          {/* <CarDetails /> */}
+          <Scheduling />
         </GestureHandlerProvier>
       </ThemeProvider>
     </FontsProvider>
