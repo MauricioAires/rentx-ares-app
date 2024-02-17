@@ -7,6 +7,7 @@ import { CarDetails } from "./src/screens/CarDetails";
 import { GestureHandlerProvier } from "./src/providers/gesture-handler";
 import { Scheduling } from "./src/screens/Scheduling";
 import { SchedulingDetails } from "./src/screens/SchedulingDetails";
+import { SchedulingCompleted } from "./src/screens/SchedulingCompleted";
 
 export default function App() {
   return (
@@ -16,7 +17,8 @@ export default function App() {
           {/* <Home /> */}
           {/* <CarDetails /> */}
           {/* <Scheduling /> */}
-          <SchedulingDetails />
+          {/* <SchedulingDetails /> */}
+          <SchedulingCompleted />
         </GestureHandlerProvier>
       </ThemeProvider>
     </FontsProvider>
