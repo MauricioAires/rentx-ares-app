@@ -1,5 +1,8 @@
+import { RectButtonProps } from "react-native-gesture-handler";
+
 import { Gasoline } from "../../assets";
 import { priceFormatter } from "../../utils/formatters/price";
+
 import * as S from "./styles";
 
 export interface ICar {
@@ -12,13 +15,16 @@ export interface ICar {
   };
 }
 
-export interface CarProps {
+export interface CarProps extends RectButtonProps {
   data: ICar;
 }
 
-export function Car({ data: { brand, name, rent, thumbnail } }: CarProps) {
+export function Car({
+  data: { brand, name, rent, thumbnail },
+  ...rest
+}: CarProps) {
   return (
-    <S.Container>
+    <S.Container {...rest}>
       <S.Details>
         <S.Brand>{brand}</S.Brand>
         <S.Name>{name}</S.Name>
