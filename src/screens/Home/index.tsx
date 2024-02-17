@@ -1,5 +1,6 @@
 import { StatusBar } from "react-native";
 import { RFValue } from "react-native-responsive-fontsize";
+import { useNavigation, CommonActions } from "@react-navigation/native";
 
 import { Logo } from "../../assets";
 import { Car, ICar } from "../../components/Car";
@@ -7,6 +8,12 @@ import { Car, ICar } from "../../components/Car";
 import * as S from "./styles";
 
 export function Home() {
+  const navigation = useNavigation();
+
+  function handleCarDetails() {
+    navigation.navigate("CarDetails");
+  }
+
   return (
     <>
       <StatusBar
@@ -35,39 +42,11 @@ export function Home() {
                 price: 120,
               },
             },
-            {
-              brand: "Audi",
-              name: "AS 5 Turbo",
-              thumbnail:
-                "https://png.monster/wp-content/uploads/2020/11/2018-audi-rs5-4wd-coupe-angular-front-5039562b.png",
-              rent: {
-                period: "Ao dia",
-                price: 120,
-              },
-            },
-            {
-              brand: "Audi",
-              name: "AS 5 Turbo",
-              thumbnail:
-                "https://png.monster/wp-content/uploads/2020/11/2018-audi-rs5-4wd-coupe-angular-front-5039562b.png",
-              rent: {
-                period: "Ao dia",
-                price: 120,
-              },
-            },
-            {
-              brand: "Audi",
-              name: "AS 5 Turbo",
-              thumbnail:
-                "https://png.monster/wp-content/uploads/2020/11/2018-audi-rs5-4wd-coupe-angular-front-5039562b.png",
-              rent: {
-                period: "Ao dia",
-                price: 120,
-              },
-            },
           ]}
           keyExtractor={(item) => String(item)}
-          renderItem={({ item }) => <Car data={item as ICar} />}
+          renderItem={({ item }) => (
+            <Car data={item as ICar} onPress={handleCarDetails} />
+          )}
         />
       </S.Container>
     </>

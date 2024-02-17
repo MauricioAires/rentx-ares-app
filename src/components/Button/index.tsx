@@ -1,6 +1,8 @@
+import { RectButtonProps } from "react-native-gesture-handler";
+
 import * as S from "./styles";
 
-export interface ButtonProps {
+export interface ButtonProps extends RectButtonProps {
   title: string;
   color?: string;
 }

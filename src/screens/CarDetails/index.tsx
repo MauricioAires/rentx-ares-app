@@ -1,6 +1,10 @@
+import { useNavigation } from "@react-navigation/native";
+
 import { BackButton } from "../../components/BackButton";
 import { ImageSlider } from "../../components/ImageSlider";
 import { Accessory } from "../../components/Accessory";
+import { Button } from "../../components/Button";
+
 import {
   Acceleration,
   Exchange,
@@ -11,9 +15,14 @@ import {
 } from "../../assets";
 
 import * as S from "./styles";
-import { Button } from "../../components/Button";
 
 export function CarDetails() {
+  const navigation = useNavigation();
+
+  function handleConfirmRental() {
+    navigation.navigate("Scheduling");
+  }
+
   return (
     <S.Container>
       <S.Header>
@@ -55,7 +64,10 @@ export function CarDetails() {
         </S.About>
       </S.Content>
       <S.Footer>
-        <Button title="Confirmar" />
+        <Button
+          title="Escolher período do aluguel"
+          onPress={() => handleConfirmRental()}
+        />
       </S.Footer>
     </S.Container>
   );
