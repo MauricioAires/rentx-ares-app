@@ -12,6 +12,7 @@ Com o RentX, você não precisa se preocupar com quedas de internet: sua reserva
 
 - [React Native](https://reactnative.dev/)
 - [Styled Components](https://styled-components.com/docs/basics)
+- [React Navigation](https://reactnavigation.org/docs/getting-started)
 
 ## Instalação
 
@@ -36,4 +37,3 @@ Para contribuir, basta abrir uma issue ou pull request neste repositório.
 
 | [<img loading="lazy" src="https://github.com/MauricioAires.png" width=115><br><sub>Mauricio Aires 👋🏽</sub>](https://github.com/MauricioAires) |
 | :-------------------------------------------------------------------------------------------------------------------------------------------: |
-
