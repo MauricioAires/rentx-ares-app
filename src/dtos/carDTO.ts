@@ -16,8 +16,8 @@ export interface CarDTO {
   name: string;
   about: string;
   rent: Rent;
-  fuel_type?: string;
+  fuel_type: AccessoryIconTypes;
   thumbnail: string;
-  accessories?: Accessories[];
+  accessories: Accessories[];
   photos: string[];
 }
