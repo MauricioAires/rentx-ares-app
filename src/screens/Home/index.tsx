@@ -1,18 +1,42 @@
+import React, { useState, useEffect } from "react";
 import { StatusBar } from "react-native";
 import { RFValue } from "react-native-responsive-fontsize";
-import { useNavigation, CommonActions } from "@react-navigation/native";
+import { useNavigation } from "@react-navigation/native";
 
+import { api } from "../../services/api";
 import { Logo } from "../../assets";
-import { Car, ICar } from "../../components/Car";
+import { Car } from "../../components/Car";
+import { Load } from "../../components/Load";
+
+import { CarDTO } from "../../dtos/carDTO";
 
 import * as S from "./styles";
 
 export function Home() {
+  const [cars, setCars] = useState<CarDTO[]>([]);
+  const [loading, setLoading] = useState(true);
+
   const navigation = useNavigation();
 
   function handleCarDetails() {
     navigation.navigate("CarDetails");
   }
+
+  useEffect(() => {
+    async function fetchCars() {
+      try {
+        const response = await api.get<any, CarDTO[]>("/cars");
+
+        setCars(response);
+      } catch (error) {
+        setLoading(false);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    fetchCars();
+  }, []);
 
   return (
     <>
@@ -30,24 +54,17 @@ export function Home() {
           </S.HeaderContent>
         </S.Header>
 
-        <S.CarList
-          data={[
-            {
-              brand: "Audi",
-              name: "AS 5 Turbo",
-              thumbnail:
-                "https://png.monster/wp-content/uploads/2020/11/2018-audi-rs5-4wd-coupe-angular-front-5039562b.png",
-              rent: {
-                period: "Ao dia",
-                price: 120,
-              },
-            },
-          ]}
-          keyExtractor={(item) => String(item)}
-          renderItem={({ item }) => (
-            <Car data={item as ICar} onPress={handleCarDetails} />
-          )}
-        />
+        {loading ? (
+          <Load />
+        ) : (
+          <S.CarList
+            data={cars}
+            keyExtractor={(item) => item.id}
+            renderItem={({ item }) => (
+              <Car data={item} onPress={handleCarDetails} />
+            )}
+          />
+        )}
       </S.Container>
     </>
   );
