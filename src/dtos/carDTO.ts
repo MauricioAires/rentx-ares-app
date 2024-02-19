@@ -1,5 +1,7 @@
+import { AccessoryIconTypes } from "../utils/mappers/accessory-icon";
+
 type Accessories = {
-  type: string;
+  type: AccessoryIconTypes;
   name: string;
 };
 

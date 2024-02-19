@@ -12,6 +12,7 @@ import Gasoline from "./gasoline.svg";
 import LogoBackgroundGray from "./logo_background_gray.svg";
 import People from "./people.svg";
 import Speed from "./speed.svg";
+import Hybrid from "./hybrid.svg";
 
 import PlaceholderCar from "./placeholder_car.png";
 
@@ -28,6 +29,7 @@ export {
   Gasoline,
   LogoBackgroundGray,
   People,
+  Hybrid,
   Speed,
   PlaceholderCar,
 };
