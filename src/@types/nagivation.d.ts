@@ -15,6 +15,7 @@ export declare global {
         dates: string[];
       };
       SchedulingCompleted: undefined;
+      MyCars: undefined;
     }
   }
 }
