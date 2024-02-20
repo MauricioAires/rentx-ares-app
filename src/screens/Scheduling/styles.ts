@@ -17,7 +17,7 @@ export const Header = styled.View`
     width: 100%;
     background-color: ${theme.colors.header};
 
-    justify-content: center;
+    align-items: flex-start;
     padding: 25px;
 
     padding-top: ${getStatusBarHeight() + 30}px;

@@ -1,7 +1,7 @@
 import { RectButtonProps } from "react-native-gesture-handler";
 
-import { accessoryIcon } from "../../utils/mappers/accessory-icon";
-import { priceFormatter } from "../../utils/formatters/price";
+import { accessoryIcon } from "../../utils/mappers/get-accessory-icon";
+import { priceFormatter } from "../../utils/formatters/price-formatter";
 import { CarDTO } from "../../dtos/carDTO";
 
 import * as S from "./styles";

@@ -5,10 +5,10 @@ import { ImageSlider } from "../../components/ImageSlider";
 import { Accessory } from "../../components/Accessory";
 import { Button } from "../../components/Button";
 import { CarDTO } from "../../dtos/carDTO";
-import { priceFormatter } from "../../utils/formatters/price";
+import { priceFormatter } from "../../utils/formatters/price-formatter";
 
 import * as S from "./styles";
-import { accessoryIcon } from "../../utils/mappers/accessory-icon";
+import { accessoryIcon } from "../../utils/mappers/get-accessory-icon";
 
 interface CarDetailsScreenParams {
   car: CarDTO;

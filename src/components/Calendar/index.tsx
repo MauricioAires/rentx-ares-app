@@ -1,16 +1,23 @@
 import {
   Calendar as PrimitiveCalendar,
   LocaleConfig,
+  CalendarProps,
+  DateData,
 } from "react-native-calendars";
+
 import { Feather } from "@expo/vector-icons";
 import { useTheme } from "styled-components";
 
 import { prBr } from "./locale-pt-br";
+import { generateInterval } from "./generate-interval";
 
 LocaleConfig.locales["pt-br"] = prBr;
 LocaleConfig.defaultLocale = "pt-br";
 
-export function Calendar() {
+type MarkedDatesProps = Pick<CalendarProps, "markedDates">;
+type DayProps = DateData;
+
+function Calendar({ markedDates, onDayPress }: CalendarProps) {
   const theme = useTheme();
 
   return (
@@ -47,6 +54,11 @@ export function Calendar() {
       }}
       firstDay={1}
       minDate={new Date().toDateString()}
+      markingType="period"
+      markedDates={markedDates}
+      onDayPress={onDayPress}
     />
   );
 }
+
+export { Calendar, generateInterval, MarkedDatesProps, DayProps };

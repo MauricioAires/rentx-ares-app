@@ -1,4 +1,4 @@
-import { AccessoryIconTypes } from "../utils/mappers/accessory-icon";
+import { AccessoryIconTypes } from "../utils/mappers/get-accessory-icon";
 
 type Accessories = {
   type: AccessoryIconTypes;
