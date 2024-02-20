@@ -20,7 +20,9 @@ export function CarDetails() {
   const { car } = route.params as CarDetailsScreenParams;
 
   function handleConfirmRental() {
-    navigation.navigate("Scheduling");
+    navigation.navigate("Scheduling", {
+      car,
+    });
   }
 
   function handleBack() {

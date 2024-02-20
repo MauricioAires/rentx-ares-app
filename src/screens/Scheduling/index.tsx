@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-import { StatusBar } from "react-native";
+import { StatusBar, Alert } from "react-native";
 import { useTheme } from "styled-components";
-import { useNavigation } from "@react-navigation/native";
+import { useNavigation, useRoute } from "@react-navigation/native";
+import { format } from "date-fns";
 
+import { getPlatformDate } from "../../utils/formatters/get-platform-date";
 import { Arrow } from "../../assets";
 import { Button } from "../../components/Button";
 import {
@@ -12,20 +14,23 @@ import {
   generateInterval,
 } from "../../components/Calendar";
 import { BackButton } from "../../components/BackButton";
+import { CarDTO } from "../../dtos/carDTO";
 
 import * as S from "./styles";
-import { format } from "date-fns";
-import { getPlatformDate } from "../../utils/formatters/get-platform-date";
 
 interface RentalPeriod {
-  start: number;
   startFormatted: string;
-  end: number;
   endFormatted: string;
+}
+
+interface SchedulingScreenParams {
+  car: CarDTO;
 }
 
 export function Scheduling() {
   const theme = useTheme();
+  const route = useRoute();
+  const { car } = route.params as SchedulingScreenParams;
 
   const [lastSelectedDate, setLastSelectedDate] = useState<DayProps>(
     {} as DayProps,
@@ -40,7 +45,14 @@ export function Scheduling() {
   const navigation = useNavigation();
 
   function handleConfirmRental() {
-    navigation.navigate("SchedulingDetails");
+    if (!rentalPeriod.startFormatted || !rentalPeriod.endFormatted) {
+      Alert.alert("Opps", "Selecione o intervalo para alugar.");
+    } else {
+      navigation.navigate("SchedulingDetails", {
+        car,
+        dates: Object.keys(markedDates),
+      });
+    }
   }
 
   function handleBack() {
@@ -68,8 +80,6 @@ export function Scheduling() {
     setMarkedDates(interval);
 
     setRentalPeriod({
-      start: start.timestamp,
-      end: end.timestamp,
       startFormatted: format(
         getPlatformDate(new Date(start.timestamp)),
         "dd/MM/yyyy",
