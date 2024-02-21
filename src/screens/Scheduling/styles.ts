@@ -87,6 +87,7 @@ export const DateValueWrapper = styled.View<DateValueProps>`
     `}
   `}
 `;
+
 export const Content = styled.ScrollView.attrs({
   contentContainerStyle: {
     padding: 24,
