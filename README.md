@@ -14,6 +14,7 @@ Com o RentX, você não precisa se preocupar com quedas de internet: sua reserva
 - [Styled Components](https://styled-components.com/docs/basics)
 - [React Navigation](https://reactnavigation.org/docs/getting-started)
 - [React Native Reanimated](https://docs.swmansion.com/react-native-reanimated/)
+- [Splash Screen](https://docs.expo.dev/versions/latest/sdk/splash-screen/)
 
 ## Instalação
 
