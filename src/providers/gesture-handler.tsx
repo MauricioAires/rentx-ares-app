@@ -1,12 +1,6 @@
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 
-interface GestureHandlerProvierProps {
-  children: React.ReactNode;
-}
-
-export function GestureHandlerProvier({
-  children,
-}: GestureHandlerProvierProps) {
+export function GestureHandlerProvier({ children }: React.PropsWithChildren) {
   return (
     <GestureHandlerRootView
       style={{

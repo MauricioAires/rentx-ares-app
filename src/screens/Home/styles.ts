@@ -49,21 +49,3 @@ export const CarList = styled(
 })`
   gap: 20px;
 `;
-
-export const MyCarsButton = styled(RectButton)`
-  ${({ theme }) => css`
-    width: 60px;
-    height: 60px;
-
-    background-color: ${theme.colors.main};
-
-    justify-content: center;
-    align-items: center;
-
-    border-radius: 30px;
-
-    position: absolute;
-    bottom: 12px;
-    right: 22px;
-  `}
-`;
